@@ -47,7 +47,8 @@ class Organism {
 
     // amount of food required before it can reproduce
     foodNeeded() {
-        return this.anatomy.cells.length;
+        console.log(Hyperparameters.multiplier)
+        return Math.round( this.anatomy.cells.length * Hyperparams.Multipler);
     }
 
     lifespan() {

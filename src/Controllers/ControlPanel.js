@@ -195,7 +195,10 @@ class ControlPanel {
         $('#lifespan-multiplier').change(function() {
             Hyperparams.lifespanMultiplier = $('#lifespan-multiplier').val();
         }.bind(this));
-
+        $('#multiplier').change(function() {
+            Hyperparams.multiplier = $('#multiplier').val();
+        });
+        
         $('#mover-rot').change(function() {
             Hyperparams.moversCanRotate = this.checked;
         });
@@ -242,6 +245,9 @@ class ControlPanel {
             $('#change-prob').val(Math.floor(Hyperparams.changeProb));
             $('#remove-prob').val(Math.floor(Hyperparams.removeProb));
         });
+        $('#multiplyer').change( function(){
+            Hyperparams.moversCanProduce = this.checked; 
+        });
         $('#movers-produce').change( function() {
             Hyperparams.moversCanProduce = this.checked;
         });
@@ -263,7 +269,7 @@ class ControlPanel {
             $('#food-blocks').prop('checked', Hyperparams.foodBlocksReproduction);
             $('#food-drop-rate').val(Hyperparams.foodDropProb);
             $('#look-range').val(Hyperparams.lookRange);
-
+             $('multiplier').val(Hyperparams.multiplier)
             if (!Hyperparams.useGlobalMutability) {
                 $('.global-mutation-in').css('display', 'none');
                 $('#avg-mut').css('display', 'block');
